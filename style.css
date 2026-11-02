@@ -1,0 +1,1092 @@
+
+/* الألوان الأساسية للهيدر والشعار (Brand Color Fallbacks) */
+.bg-brand-900 { background-color: #14532d !important; }
+.bg-brand-800 { background-color: #166534 !important; }
+.bg-brand-700 { background-color: #15803d !important; }
+.bg-brand-600 { background-color: #16a34a !important; }
+.text-brand-100 { color: #dcfce7 !important; }
+.text-brand-200 { color: #bbf7d0 !important; }
+.text-brand-300 { color: #86efac !important; }
+.text-brand-400 { color: #4ade80 !important; }
+.border-brand-700 { border-color: #15803d !important; }
+.border-brand-800 { border-color: #166534 !important; }
+
+button, a, select, input {
+  touch-action: manipulation;
+}
+
+/* -------------------------------------------------------------
+   نظام إدارة ليدرز المجموعات والسكاشن | جامعة برج العرب التكنولوجية
+   BATU Leaders Management System - Stylesheet
+   كلاسات بسيطة ومفهومة (Clean & Semantic CSS Classes)
+   ------------------------------------------------------------- */
+
+/* الخط الافتراضي للنظام */
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* =============================================================
+   1. تثبيت أعمدة جداول البيانات (Fixed / Pinned Columns)
+   تستخدم لتثبيت أول عمودين (مثل الرقم الأكاديمي واسم الطالب)
+   أثناء التمرير الأفقي لسهولة قراءة الشيتات
+   ============================================================= */
+
+/* العمود الأول المثبت (الرقم الأكاديمي أو السكشن) */
+.col-fixed-1,
+.col-fixed,
+.sticky-col,
+.table-pinned-col-primary {
+  position: sticky;
+  right: 0;
+  z-index: 20;
+  background: inherit;
+}
+
+/* العمود الثاني المثبت (اسم الطالب) */
+.col-fixed-2,
+.sticky-col-2,
+.table-pinned-col-secondary {
+  position: sticky;
+  right: 140px;
+  z-index: 20;
+  background: inherit;
+}
+
+/* دعم الاتجاه من اليسار لليمين (LTR Layout Support) */
+[dir="ltr"] .col-fixed-1,
+[dir="ltr"] .col-fixed,
+[dir="ltr"] .sticky-col,
+[dir="ltr"] .table-pinned-col-primary {
+  left: 0;
+  right: auto;
+}
+
+[dir="ltr"] .col-fixed-2,
+[dir="ltr"] .sticky-col-2,
+[dir="ltr"] .table-pinned-col-secondary {
+  left: 140px;
+  right: auto;
+}
+
+/* =============================================================
+   2. كلاسات النماذج والمدخلات (Forms & Inputs)
+   ============================================================= */
+
+/* تسمية الحقل */
+.form-label {
+  display: block;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #334155;
+}
+.dark .form-label {
+  color: #cbd5e1;
+}
+
+/* حقل الإدخال الأساسي */
+.input-box {
+  width: 100%;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.input-box:focus {
+  border-color: #d97706; /* amber-600 */
+}
+.dark .input-box {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+.dark .input-box:focus {
+  border-color: #f59e0b;
+}
+
+/* حقول الأكواد والرموز السرية */
+.input-pin {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+/* شبكات توزيع الحقول (Form Grids) */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+@media (min-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+@media (min-width: 640px) {
+  .form-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =============================================================
+   3. كلاسات البطاقات والحاويات (Cards & Containers)
+   ============================================================= */
+
+/* البطاقة الأساسية */
+.card-box.p-0 {
+  padding: 0 !important;
+}
+
+.card-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.dark .card-box {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* ترويسة البطاقة */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+.dark .card-header {
+  border-color: #334155;
+}
+
+/* ذيل البطاقة وشريط الأزرار */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+.dark .card-footer {
+  border-color: #334155;
+}
+
+/* النافذة المنبثقة الأساسية (Modal Box) */
+.modal-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  max-width: 32rem;
+  width: 100%;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.dark .modal-box {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* بنرات التنبيه والإحصائيات */
+.banner-box-emerald {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+  border: 1px solid #6ee7b7;
+  padding: 0.875rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+.dark .banner-box-emerald {
+  border-color: rgba(4, 120, 87, 0.8);
+}
+
+.banner-box-amber {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+  border: 1px solid #fcd34d;
+  padding: 0.875rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+.dark .banner-box-amber {
+  border-color: rgba(180, 83, 9, 0.8);
+}
+
+.hero-banner-amber {
+  background: linear-gradient(to right, #f59e0b, #d97706, #ea580c);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #fbbf24;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* =============================================================
+   4. كلاسات الأزرار البسيطة (Buttons)
+   ============================================================= */
+
+/* الزر الأساسي (برتقالي / كهرماني) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #d97706;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  background-color: #b45309;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* زر أساسي صغير */
+.btn-primary-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  background-color: #d97706;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-primary-sm:hover {
+  background-color: #b45309;
+}
+.btn-primary-sm:active {
+  transform: scale(0.98);
+}
+
+/* الزر الثانوي / الرمادي */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+.dark .btn-secondary {
+  background-color: #334155;
+  color: #cbd5e1;
+  border-color: #475569;
+}
+.dark .btn-secondary:hover {
+  background-color: #475569;
+  color: #ffffff;
+}
+
+/* زر الحذف أو العمليات الخطيرة (أحمر) */
+.btn-danger-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: #fff1f2;
+  color: #f43f5e;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fecdd3;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-danger-sm:hover {
+  background-color: #ffe4e6;
+  color: #e11d48;
+}
+.btn-danger-sm:active {
+  transform: scale(0.95);
+}
+.dark .btn-danger-sm {
+  background-color: rgba(76, 5, 25, 0.5);
+  border-color: #881337;
+  color: #fb7185;
+}
+.dark .btn-danger-sm:hover {
+  background-color: rgba(76, 5, 25, 0.8);
+}
+
+/* زر الإجراء السريع الكهرماني */
+.btn-action-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: #fffbeb;
+  color: #b45309;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fde68a;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-action-sm:hover {
+  background-color: #fef3c7;
+  color: #78350f;
+}
+.btn-action-sm:active {
+  transform: scale(0.95);
+}
+.dark .btn-action-sm {
+  background-color: rgba(69, 26, 3, 0.6);
+  border-color: #92400e;
+  color: #fcd34d;
+}
+
+/* زر الإلغاء الشفاف */
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out;
+}
+.btn-cancel:hover {
+  color: #334155;
+}
+.dark .btn-cancel {
+  color: #94a3b8;
+}
+.dark .btn-cancel:hover {
+  color: #f1f5f9;
+}
+
+/* زر النجاح الأخضر */
+.btn-success-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: #ecfdf5;
+  color: #047857;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #a7f3d0;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-success-sm:hover {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.dark .btn-success-sm {
+  background-color: rgba(6, 78, 59, 0.5);
+  border-color: #065f46;
+  color: #6ee7b7;
+}
+
+/* =============================================================
+   5. كلاسات الشارات والبطاقات التعريفية (Badges)
+   ============================================================= */
+
+.badge-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.dark .badge-success {
+  background-color: rgba(2, 44, 34, 0.6);
+  color: #6ee7b7;
+  border-color: #065f46;
+}
+
+.badge-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #4338ca;
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+.dark .badge-id {
+  background-color: rgba(49, 46, 129, 0.6);
+  color: #a5b4fc;
+  border-color: #3730a3;
+}
+
+/* =============================================================
+   6. تخصيص شريط التمرير العصري (Modern Custom Scrollbar)
+   ============================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =============================================================
+   7. كلاسات شاشات تسجيل الدخول والترحيب (Auth Forms)
+   ============================================================= */
+
+/* حقل الإدخال الداكن في بوابات الدخول */
+.input-dark {
+  width: 100%;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s ease-in-out;
+}
+.input-dark:focus {
+  border-color: #d97706; /* amber-600 */
+}
+
+/* زر دخول ليدر المجموعة في شاشة الدخول */
+.btn-auth-amber {
+  width: 100%;
+  background-color: #d97706;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.3);
+  transition: all 0.15s ease-in-out;
+}
+.btn-auth-amber:hover {
+  background-color: #b45309;
+}
+
+/* زر دخول ليدر السكشن في شاشة الدخول */
+.btn-auth-emerald {
+  width: 100%;
+  background-color: #059669;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3);
+  transition: all 0.15s ease-in-out;
+}
+.btn-auth-emerald:hover {
+  background-color: #047857;
+}
+
+/* =============================================================
+   8. كلاسات لوحة تحكم المتحكم العام (Master Admin Dashboard)
+   ============================================================= */
+
+/* الزر البنفسجي الأساسي للمتحكم */
+.btn-purple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #9333ea;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-purple:hover {
+  background-color: #7e22ce;
+}
+.btn-purple:active {
+  transform: scale(0.98);
+}
+
+/* زر بنفسجي صغير */
+.btn-purple-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: #f3e8ff;
+  color: #7e22ce;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e9d5ff;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+.btn-purple-sm:hover {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+.dark .btn-purple-sm {
+  background-color: rgba(88, 28, 135, 0.4);
+  color: #d8b4fe;
+  border-color: #7e22ce;
+}
+.dark .btn-purple-sm:hover {
+  background-color: rgba(88, 28, 135, 0.7);
+}
+
+/* شارة تعريفية بنفسجية للمتحكم */
+.badge-purple {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #d8b4fe;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.dark .badge-purple {
+  background-color: rgba(88, 28, 135, 0.6);
+  color: #d8b4fe;
+  border-color: #7e22ce;
+}
+
+/* بنر بنفسجي مخصص */
+.banner-box-purple {
+  background: linear-gradient(to right, rgba(147, 51, 234, 0.15), rgba(147, 51, 234, 0.05));
+  border: 1px solid #c084fc;
+  padding: 0.875rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+}
+.dark .banner-box-purple {
+  border-color: rgba(126, 34, 206, 0.8);
+}
+
+
+
+/* =============================================================
+   9. تنسيقات الطباعة الرسمية (Official Printing Styles)
+   تستخدم عند طباعة النوتة، كشوف المشكلات، الشيتات وسجلات الطلاب
+   ============================================================= */
+
+/* عناصر تظهر فقط عند الطباعة */
+.print-only {
+  display: none !important;
+}
+
+@media print {
+  /* إخفاء كل عناصر التحكم والتنقل والأزرار والبحث */
+  header,
+  nav,
+  .no-print,
+  button,
+  .btn-primary,
+  .btn-primary-sm,
+  .btn-secondary,
+  .btn-secondary-sm,
+  .btn-action-sm,
+  .btn-cancel,
+  .btn-auth-emerald,
+  .modal-overlay,
+  .modal-box,
+  .student-search-box,
+  .card-header button,
+  .notebook-controls {
+    display: none !important;
+  }
+
+  /* إظهار العناصر المخصصة للطباعة */
+  .print-only {
+    display: block !important;
+  }
+
+  /* إعادة ضبط ألوان الصفحة لتناسب الطابعات والمستندات الرسمية */
+  html, body, #app, main {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Cairo', sans-serif !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .card-box {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* إزالة الظلال وتثبيت التباين العالي */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* جداول الطباعة واضحة ومحددة بخطوط صريحة */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 8px !important;
+    page-break-inside: auto !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  th, td {
+    border: 1px solid #1e293b !important;
+    padding: 6px 8px !important;
+    text-align: right !important;
+    font-size: 9pt !important;
+    color: #0f172a !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    font-weight: 800 !important;
+  }
+
+  /* عرض النصوص المكتوبة في الحقول النصية بوضوح في الطباعة */
+  .print-input-text {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 9pt !important;
+    width: 100% !important;
+  }
+
+  /* هوامش الصفحات الرسمية */
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm 15mm 10mm;
+  }
+}
+
+@media print {
+  span.print-only {
+    display: inline-block !important;
+  }
+}
+
+
+/* =============================================================
+   10. التوافق الشامل مع جميع الشاشات (Full Responsive Design)
+   يدعم الهواتف الذكية (Small/Large Mobile)، الأجهزة اللوحية (Tablets)،
+   اللابتوب وشاشات الحواسيب المكتبية الكبيرة (Desktop Displays)
+   ============================================================= */
+
+/* تحسين تجربة التفاعل اللمسي ومنع التحديد غير المقصود */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* سلاسة التمرير اللمسي على جميع الحاويات القابلة للتمرير */
+.overflow-x-auto,
+.overflow-y-auto,
+.table-responsive-wrapper {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* إخفاء شريط التمرير لأشرطة التبويب الأفقية مع الحفاظ على التمرير السلس */
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.scrollbar-none {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* تلميح التمرير الأفقي للجداول على الشاشات الصغيرة */
+.table-scroll-hint {
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+/* -------------------------------------------------------------
+   شاشات الهواتف المحمولة والأجهزة الصغيرة (Mobile Screens: < 768px)
+   ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* فك تثبيت الأعمدة على الهواتف لتفادي تغطية مساحة العرض الصغير */
+  .col-fixed-1,
+  .col-fixed,
+  .sticky-col,
+  .table-pinned-col-primary,
+  .col-fixed-2,
+  .sticky-col-2,
+  .table-pinned-col-secondary {
+    position: static !important;
+    right: auto !important;
+    left: auto !important;
+  }
+
+  /* النوافذ المنبثقة (Modals) تملأ العرض بهوامش متناسقة */
+  .modal-box {
+    width: 95vw !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+    margin: 0.5rem auto !important;
+    max-height: 92vh !important;
+    border-radius: 1.25rem !important;
+  }
+
+  /* تقليل الهوامش الداخلية للبطاقات لاستغلال المساحة */
+  .card-box {
+    padding: 0.875rem !important;
+    border-radius: 1rem !important;
+  }
+  .card-box.p-0 {
+    padding: 0 !important;
+  }
+
+  /* تحسين حجم الأزرار لملاءمة النقر بأصابع اليد */
+  .btn-primary,
+  .btn-auth-amber,
+  .btn-auth-emerald,
+  .btn-purple {
+    padding: 0.5rem 0.875rem !important;
+    font-size: 0.8125rem !important;
+    border-radius: 0.625rem !important;
+  }
+
+  .btn-primary-sm,
+  .btn-secondary-sm,
+  .btn-action-sm,
+  .btn-danger-sm,
+  .btn-success-sm,
+  .btn-purple-sm {
+    padding: 0.375rem 0.625rem !important;
+    font-size: 0.72rem !important;
+    min-height: 34px !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* منع زووم المتصفح التلقائي المزعج عند التركيز على الحقول في هواتف آيفون وأندرويد */
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  select,
+  textarea,
+  .input-box {
+    font-size: 14px !important;
+    touch-action: manipulation;
+  }
+
+  /* خلايا الجداول على الهواتف: هوامش مريحة ومضغوطة لمنع التشتت */
+  table th, 
+  table td {
+    padding: 0.5rem 0.35rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* ضبط هوامش البنرات */
+  .banner-box-emerald,
+  .banner-box-amber,
+  .hero-banner-amber {
+    padding: 0.75rem !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+/* -------------------------------------------------------------
+   شاشات الهواتف شديدة الصغر (Compact Mobile: < 480px)
+   ------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .card-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card-footer {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card-footer > button {
+    flex: 1 1 auto;
+    min-width: 90px;
+  }
+
+  .modal-box {
+    padding: 0.75rem !important;
+  }
+
+  .hero-card {
+    padding: 1rem !important;
+  }
+}
+
+/* -------------------------------------------------------------
+   شاشات التابلت والأجهزة المتوسطة (Tablet: 768px - 1024px)
+   ------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-box {
+    padding: 1rem;
+  }
+
+  .col-fixed-1 {
+    right: 0;
+  }
+
+  .col-fixed-2 {
+    right: 120px;
+  }
+}
+
+/* -------------------------------------------------------------
+   شاشات الحواسيب المكتبية الكبيرة (Desktop: > 1024px)
+   ------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .col-fixed-1 {
+    right: 0;
+  }
+
+  .col-fixed-2 {
+    right: 140px;
+  }
+}
+
+
+/* =============================================================
+   قواعد التمرير الأفقي الحر للجداول على شاشات الهواتف المحمولة
+   ============================================================= */
+
+/* الحاوية الأفقية: تتيح التمرير اللمسي الحر بدون أي قيود */
+.overflow-x-auto,
+.table-responsive-container {
+  display: block !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x pan-y !important;
+  overscroll-behavior-x: contain !important;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.overflow-x-auto.is-dragging {
+  cursor: grabbing !important;
+  scroll-behavior: auto !important;
+}
+
+/* إجبار كل الجداول على عرض كافٍ يضمن ظهور الأعمدة كاملة عند التمرير */
+.overflow-x-auto > table,
+table.data-table-scrollable {
+  min-width: 720px !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+/* شيت الغياب المجمع يحتاج 880px على الأقل لعرض كل أسابيع الحضور */
+.attendance-matrix-table,
+#attendanceMatrixTable {
+  min-width: 880px !important;
+}
+
+/* شريط تمرير أفقي واضح باللون الزمردي على الهاتف */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px !important;
+  display: block !important;
+}
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 4px;
+}
+.dark .overflow-x-auto::-webkit-scrollbar-track {
+  background: #1e293b !important;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #10b981 !important;
+  border-radius: 4px;
+}
+
+/* في وضع الطباعة: تمدد الجداول لتناسب الورقة بدون شريط تمرير */
+@media print {
+  .overflow-x-auto,
+  .table-responsive-container {
+    overflow: visible !important;
+    display: block !important;
+  }
+  .overflow-x-auto > table,
+  table.data-table-scrollable,
+  .attendance-matrix-table,
+  #attendanceMatrixTable {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
+/* =============================================================
+   ملاءمة تامة ومصغرة لشاشات الهواتف المحمولة (Compact Mobile Scale)
+   ============================================================= */
+@media (max-width: 640px) {
+  html {
+    font-size: 13.5px !important;
+  }
+
+  .card-box {
+    padding: 0.625rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .card-box.p-0 {
+    padding: 0 !important;
+  }
+
+  table th, 
+  table td {
+    padding: 0.35rem 0.25rem !important;
+    font-size: 0.7rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .input-box {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 13px !important;
+  }
+
+  .btn-primary-sm,
+  .btn-secondary-sm,
+  .btn-action-sm,
+  .btn-danger-sm {
+    padding: 0.25rem 0.45rem !important;
+    font-size: 0.68rem !important;
+    min-height: 28px !important;
+    border-radius: 0.5rem !important;
+  }
+}
